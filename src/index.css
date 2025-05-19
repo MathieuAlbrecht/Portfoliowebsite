@@ -1,0 +1,550 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+body {
+    color: #000000;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+
+.footer {
+    background-color: #1E1E1E;
+    color: #CCCCCC;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer a {
+    color: #007ACC;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.custom-navbar {
+    background-color: #1E1E1E;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: left; /* Neu hinzugefügt */
+    justify-content: flex-start; /* Falls Flexbox verwendet wird */
+}
+
+.custom-navbar .navbar-toggler {
+    border: none;
+    background-color: #F5F5F5;
+}
+
+.custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(51,51,51,0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.custom-navbar .nav-link {
+    color: #000000;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #007ACC;
+}
+
+.custom-navbar .dropdown-menu {
+    background-color: #1E1E1E;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .dropdown-item {
+    color: #CCCCCC;
+    transition: background-color 0.3s ease;
+}
+
+.custom-navbar .dropdown-item:hover {
+    background-color: #F5F5F5;
+    color: #007ACC;
+}
+
+.header {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 32px;
+    padding: 0 40px 40px 40px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.06);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.15s, box-shadow 0.15s;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 3px 8px rgba(0,0,0,0.10);
+}
+
+.project-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-on-image {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-on-image.badge-multi {
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: none;
+    gap: 6px;
+    padding: 0;
+}
+
+.badge-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 0.98rem;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 12px;
+}
+
+.card-img-overlay {
+    display: none;
+}
+
+.badge-container,
+.badge {
+    display: none !important;
+}
+
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px 30px 10px;
+        gap: 18px;
+    }
+    .card {
+        min-width: 0;
+    }
+    .project-image {
+        height: 160px;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-image {
+        height: 120px;
+    }
+}
+
+.Details-Button {
+    background: linear-gradient(90deg, #007ACC, #1E1E1E);
+    border: none;
+    color: #FFFFFF;
+    padding: 14px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 12px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 122, 204, 0.25), 0 2px 8px rgba(0,0,0,0.10);
+    letter-spacing: 1px;
+    transition: all 0.25s cubic-bezier(.4,0,.2,1);
+    outline: 2px solid #007ACC;
+    outline-offset: 2px;
+}
+
+.Details-Button:hover {
+    background: linear-gradient(90deg, #1E1E1E, #007ACC);
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(0, 122, 204, 0.35), 0 4px 16px rgba(0,0,0,0.15);
+    outline: 3px solid #007ACC;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 10vh;
+    padding-left: 0; /* vorher: 80px */
+}
+
+.name-display {
+    font-size: 100px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+}
+
+.full-name {
+    display: inline-block;
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+
+    width: 0;
+    animation: typing 2s steps(20, end) forwards;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 16ch;
+    }
+}
+
+
+.Homepagebutton {
+    background: linear-gradient(90deg, #007ACC, #1E1E1E);
+    border: none;
+    color: #FFFFFF;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 12px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 122, 204, 0.25), 0 2px 8px rgba(0,0,0,0.10);
+    letter-spacing: 1px;
+    transition: all 0.25s cubic-bezier(.4,0,.2,1);
+    outline: 2px solid #007ACC;
+    outline-offset: 2px;
+    max-width: 180px;
+
+}
+
+.Homepagebutton:hover {
+    background: linear-gradient(90deg, #1E1E1E, #007ACC);
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(0, 122, 204, 0.35), 0 4px 16px rgba(0,0,0,0.15);
+    outline: 3px solid #007ACC;
+}
+.Homepagebuttons{
+    margin-top: 50px;
+    margin-left: 0; /* vorher: 80px */
+    display: flex;
+    gap: 20px;
+
+}
+.custom-navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.code-container {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.ShowCodeButton .btn {
+    background: linear-gradient(90deg, #1E1E1E, #007ACC);
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.ShowCodeButton .btn:hover {
+    background: linear-gradient(90deg, #007ACC, #1E1E1E);
+    transform: scale(1.03);
+}
+
+.code-container pre {
+    border-radius: 10px;
+}
+.badge {
+    background-color: #f0f0f0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #000000;
+    margin-left : 80px;
+}
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 80px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.name-container {
+    font-size: 40px;
+}
+
+.Projectdetailpage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+
+.left-column {
+    flex: 1;
+}
+
+.right-column {
+    flex: 2;
+}
+
+.projectdetails-card {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 16px;
+}
+
+.passwordmanager-images {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.PasswordmanagerDetails-Image {
+    width: 100%;
+    height: auto;
+}
+.CalculatorDetails-Image {
+    width: 50%;
+    padding-left: 80px;
+    height: auto;
+}
+.card-text{
+    text-align: center;
+}
+.passwordmanager-image-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.image-caption {
+    font-size: 0.95rem;
+    color: #FFFFFF;
+    text-align: center;
+}
+.nameDisplay-container{
+    font-size: 80px;
+    font-weight: 600;
+}
+.tictactoe-video{
+    width : 90%;
+    height: auto;
+    border-radius: 16px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .about-container,
+    .Homepagebuttons,
+    .projectdetails-card,
+    .code-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .nameDisplay-container {
+        font-size: 40px;
+    }
+    .header {
+        font-size: 28px;
+    }
+    .CalculatorDetails-Image {
+        width: 100%;
+        padding-left: 0;
+    }
+    .tictactoe-video {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-container,
+    .Homepagebuttons,
+    .projectdetails-card,
+    .code-container {
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .nameDisplay-container {
+        font-size: 24px;
+    }
+    .header {
+        font-size: 20px;
+    }
+    .Subtitle {
+        font-size: 16px;
+        margin-left: 0;
+    }
+    .CalculatorDetails-Image {
+        width: 100%;
+        padding-left: 0;
+    }
+    .tictactoe-video {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    .footer {
+        font-size: 12px;
+        padding: 6px 0;
+    }
+    .Homepagebutton {
+        font-size: 14px;
+        padding: 10px 8px;
+        max-width: 120px;
+    }
+}
+.lightbox {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.card-text-About{
+    max-width : 70%;
+    margin-left: auto;
+    text-align: right;
+}
+.Aboutme-img{
+    max-width: 25%;
+    margin-left: 80px;
+}
+
+
+
