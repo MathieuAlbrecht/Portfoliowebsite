@@ -20,9 +20,9 @@ class CustomNavbar extends React.Component {
                             <NavDropdown title="Projekte" id="basic-nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/projects">Alle Projekte</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/projects/passwordmanager">Passwortmanager</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="/projects/webpage">Webseite</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/projects/calculator">Rechner</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/projects/tictactoe">Tic Tac Toe</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/projects/wetterwunder">WetterWunder</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} to="/about" >Über mich</Nav.Link>
                         </Nav>

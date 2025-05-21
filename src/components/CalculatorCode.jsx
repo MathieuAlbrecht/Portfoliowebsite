@@ -1,6 +1,18 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { tomorrow as baseTomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+const tomorrow = {
+    ...baseTomorrow,
+    'pre[class*="language-"]': {
+        ...baseTomorrow['pre[class*="language-"]'],
+        background: '#000',
+    },
+    'code[class*="language-"]': {
+        ...baseTomorrow['code[class*="language-"]'],
+        background: 'none',
+    },
+};
 
 const CalculatorcodeString = `
 using System;
@@ -76,15 +88,17 @@ class Calculator
 
 const CalculatorCode = () => {
     return (
-        <>
+        <div>
             <h1 className="header">Rechner Code</h1>
-            <div className="Subtitle">Hier sehen sie den Code der Rechner Anwendung.</div>
-            <div className="code-container">
-                <SyntaxHighlighter language="javascript" style={tomorrow}>
-                    {CalculatorcodeString}
-                </SyntaxHighlighter>
+            <div className="projectdetails-card text-bg-dark">
+                <div className="card-body">
+                    <div className="Subtitle subtitle-white" style={{textAlign: "center"}}>Hier sehen sie den Code für die Rechner Anwendung.</div>
+                    <SyntaxHighlighter language="javascript" style={tomorrow} >
+                        {CalculatorcodeString}
+                    </SyntaxHighlighter>
+                </div>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -5,6 +5,7 @@ body {
     color: #000000;
     font-family: sans-serif;
     margin: 0;
+    font-size: 20px;
 }
 
 .app-container {
@@ -27,7 +28,6 @@ body {
     color: #CCCCCC;
     text-align: center;
     padding: 10px 0;
-    font-size: 14px;
     width: 100%;
     margin-top: auto;
 }
@@ -174,13 +174,13 @@ body {
 }
 
 .card-title {
-    font-size: 1.15rem;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
 .card-text {
-    font-size: 0.98rem;
+    font-size: 20px;
     margin-left: 80px;
     margin-right: 80px;
     margin-bottom: 12px;
@@ -190,11 +190,9 @@ body {
     display: none;
 }
 
-.badge-container,
-.badge {
+.badge-container{
     display: none !important;
 }
-
 
 @media (max-width: 900px) {
     .projects-grid {
@@ -227,9 +225,8 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    margin: 12px 2px;
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0, 122, 204, 0.25), 0 2px 8px rgba(0,0,0,0.10);
@@ -237,6 +234,9 @@ body {
     transition: all 0.25s cubic-bezier(.4,0,.2,1);
     outline: 2px solid #007ACC;
     outline-offset: 2px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .Details-Button:hover {
@@ -248,10 +248,14 @@ body {
 
 .about-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: 32px;
+    padding-left: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
     justify-content: flex-start;
-    height: 10vh;
-    padding-left: 0; /* vorher: 80px */
 }
 
 .name-display {
@@ -289,7 +293,7 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin: 12px 2px;
     cursor: pointer;
@@ -311,7 +315,7 @@ body {
 }
 .Homepagebuttons{
     margin-top: 50px;
-    margin-left: 0; /* vorher: 80px */
+    margin-left: 0;
     display: flex;
     gap: 20px;
 
@@ -320,11 +324,13 @@ body {
     display: block;
 }
 
-.code-container {
+.Buttons-container {
     padding-left: 80px;
     padding-right: 80px;
     margin-bottom: 50px;
     padding-top: 20px;
+    text-align: center;
+
 }
 
 @keyframes pulse {
@@ -341,7 +347,7 @@ body {
     border: none;
     color: #FFFFFF;
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     border-radius: 6px;
     transition: all 0.2s ease;
@@ -353,9 +359,7 @@ body {
     transform: scale(1.03);
 }
 
-.code-container pre {
-    border-radius: 10px;
-}
+
 .badge {
     background-color: #f0f0f0;
     display: inline-flex;
@@ -367,11 +371,18 @@ body {
 }
 
 .Subtitle {
-    font-size: 20px;
+    font-size: 30px;
     margin-top: 10px;
     color: #000000;
-    margin-left : 80px;
+    margin-left: 80px;
+    margin-bottom: 18px;
+    margin-top: 10px;
 }
+
+.subtitle-white {
+    color: #FFFFFF;
+}
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -410,6 +421,13 @@ body {
     border-radius: 16px;
 }
 
+.projectdetails-card.text-bg-dark {
+    background: #111 !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18), 0 1.5px 4px rgba(0,0,0,0.10);
+    color: #f3f3f3;
+}
+
 .passwordmanager-images {
     display: flex;
     gap: 16px;
@@ -421,6 +439,7 @@ body {
 .PasswordmanagerDetails-Image {
     width: 100%;
     height: auto;
+    border-radius: 15px;
 }
 .CalculatorDetails-Image {
     width: 50%;
@@ -435,10 +454,11 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1;
+
 }
 
 .image-caption {
-    font-size: 0.95rem;
+    font-size: 20px;
     color: #FFFFFF;
     text-align: center;
 }
@@ -446,30 +466,45 @@ body {
     font-size: 80px;
     font-weight: 600;
 }
-.tictactoe-video{
-    width : 90%;
-    height: auto;
+
+
+.tictactoe-video-large {
+    display: block;
+    margin: 0 auto 12px auto;
     border-radius: 16px;
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-top: 20px;
+    background: #000;
+    max-width: 100%;
+    min-height: 320px;
+    min-width: 240px;
 }
 
 @media (max-width: 900px) {
     .about-container,
     .Homepagebuttons,
-    .projectdetails-card,
-    .code-container {
+    .projectdetails-card
+     {
         padding-left: 20px;
         padding-right: 20px;
         margin-left: 0;
         margin-right: 0;
     }
+    .about-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    .Aboutme-img {
+        max-width: 60vw;
+        margin-left: 0;
+    }
+    .card-text-About {
+        max-width: 100%;
+    }
     .nameDisplay-container {
         font-size: 40px;
     }
     .header {
-        font-size: 28px;
+        font-size: 40px;
     }
     .CalculatorDetails-Image {
         width: 100%;
@@ -482,11 +517,21 @@ body {
     }
 }
 
+@media (max-width: 700px) {
+    .tictactoe-details-card {
+        max-width: 98vw;
+        padding: 0 2vw;
+    }
+    .tictactoe-screenshot, .tictactoe-video {
+        max-width: 98vw;
+    }
+}
+
 @media (max-width: 600px) {
     .about-container,
     .Homepagebuttons,
-    .projectdetails-card,
-    .code-container {
+    .projectdetails-card
+    {
         padding-left: 8px;
         padding-right: 8px;
         margin-left: 0;
@@ -496,10 +541,10 @@ body {
         font-size: 24px;
     }
     .header {
-        font-size: 20px;
+        font-size: 28px;
     }
     .Subtitle {
-        font-size: 16px;
+        font-size: 22px;
         margin-left: 0;
     }
     .CalculatorDetails-Image {
@@ -512,11 +557,11 @@ body {
         width: 100%;
     }
     .footer {
-        font-size: 12px;
+        font-size: 18px;
         padding: 6px 0;
     }
     .Homepagebutton {
-        font-size: 14px;
+        font-size: 20px;
         padding: 10px 8px;
         max-width: 120px;
     }
@@ -536,15 +581,270 @@ body {
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
-.card-text-About{
-    max-width : 70%;
-    margin-left: auto;
-    text-align: right;
+.card-text-About {
+    max-width: 70%;
+    margin-left: 0;
+    text-align: left;
 }
-.Aboutme-img{
+.Aboutme-img {
     max-width: 25%;
-    margin-left: 80px;
+    min-width: 120px;
+    margin-left: 0;
+    border-radius: 16px;
+}
+.marquee-container {
+    width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    background: transparent;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@keyframes custom-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-720px); }
+}
+
+.marquee-img {
+    height: 100px;
+    width: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.project-details-card {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 8px;
+    background: #111;
+    border-radius: 16px;
+}
+
+.project-header-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.project-badge {
+    margin-top: 2px;
+}
+.project-description {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #f3f3f3;
+}
+.project-features {
+    text-align: left;
+    display: block;
+    margin: 0 auto 18px auto;
+    padding-left: 32px;
+    font-size: 20px;
+    line-height: 1.7;
+    border-radius: 8px;
+    color: #eaeaea;
+    list-style-type: disc; /* Bulletpoints aktivieren */
+}
+.project-features li {
+    margin-bottom: 4px;
+    list-style-type: disc; /* Bulletpoints für jedes Listenelement */
+}
+.project-tech {
+    margin: 18px 0 24px 0;
+    font-size: 20px;
+    color: #e0e0e0;
+}
+.project-screenshot {
+
+    width: 100%;
+    display: block;
+    margin: 0 auto 12px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.project-caption {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #bdbdbd;
+    font-size: 20px;
+}
+.project-video {
+    display: block;
+    margin: 0 auto 12px auto;
+    border-radius: 16px;
+    background: #000;
+    width: 100%;
+    min-height: 260px;
+    min-width: 240px;
+}
+.project-screenshots-row {
+    display: flex;
+    flex-direction: row !important;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 0 12px;
+}
+
+.project-screenshot-container {
+    flex: 1;
+    width: calc(33.333% - 8px);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 
+.project-caption {
+    font-size: 20px;
+    text-align: center;
+    margin: 4px 0;
+    color: #bdbdbd;
+    padding: 0 4px;
+}
+@media (max-width: 1100px) {
+    .project-screenshots-row {
+        flex-direction: row !important;
+        gap: 4px;
+    }
+    .project-screenshot-container {
+        max-width: 32%;
+    }
+}
+
+@media (max-width: 700px) {
+    .project-details-card {
+        max-width: 98vw;
+        padding: 0 2vw;
+    }
+   
+}
+
+.tech-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.tech-modal-content {
+    background: #1E1E1E;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 300px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    position: relative;
+    animation: modalPop 0.3s ease-out;
+}
+
+.tech-modal-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #007ACC;
+}
+
+.tech-modal-content p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.tech-modal-content button {
+    background: linear-gradient(90deg, #007ACC, #1E1E1E);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.tech-modal-content button:hover {
+    background: linear-gradient(90deg, #1E1E1E, #007ACC);
+    transform: scale(1.05);
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.Contact-Buttons {
+
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 80px;
+    flex-wrap: wrap;
+}
+
+.Contact-Buttons a {
+    background: linear-gradient(90deg, #1E1E1E, #007ACC);
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 122, 204, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+    outline: 2px solid #007ACC;
+    outline-offset: 2px;
+    display: inline-block;
+}
+
+.Contact-Buttons a:hover {
+    background: linear-gradient(90deg, #007ACC, #1E1E1E);
+    transform: scale(1.03);
+    outline: 3px solid #007ACC;
+    text-decoration: none;
+    color: #fff;
+}
+
+.Contact-Buttons .btn {
+    background: linear-gradient(90deg, #1E1E1E, #007ACC);
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.Contact-Buttons .btn:hover {
+    background: linear-gradient(90deg, #007ACC, #1E1E1E);
+    transform: scale(1.03);
+}
+.code-container {
+
+}

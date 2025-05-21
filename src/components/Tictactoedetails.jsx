@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import TictactoeVideo from "./assets/TictactoeVideo.mov";
+
 function Tictactoedetails() {
     const navigate = useNavigate();
 
@@ -9,31 +10,46 @@ function Tictactoedetails() {
             <h1 className="header">Tic Tac Toe</h1>
             <div className="projectdetails-card text-bg-dark">
                 <div className="card-body">
-                    <p className="card-text">
-                        Ein Tictactoe Spiel geschrieben als Konsolenanwendung in C#. Das Spiel wird von 2 Spielern gespielt. Die Spieler geben abwechselnd ihre Züge ein. Das Spiel überprüft nach jedem Zug, ob ein Spieler gewonnen hat oder ob das Spiel unentschieden endet.
-                    </p>
-                    <div className="Subtitle text-white">
-                        Technologien/Tools:
-                    </div>
-                    <div className="card-text" style={{textAlign: "left", marginLeft: "80px"}}>
-                        <ul>
-                            <li>Sprache: C#</li>
+                    <div className="projekt project-details-card" >
+                        <div className="project-header-row">
+                            <img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=c-sharp&logoColor=white" alt="C# Badge" height="20" className="project-badge" />
+                        </div>
+                        <div className="Subtitle subtitle-white">Beschreibung:</div>
+                        <p className="project-description">
+                            <strong>Klassisches TicTacToe-Spiel für zwei Spieler – direkt in der Konsole!</strong><br />
+                            Spiele das beliebte Strategiespiel auf deinem eigenen Computer. Die Anwendung läuft als Konsolenprogramm und ist perfekt, um grundlegende Programmierlogik und das Zusammenspiel von Benutzereingaben kennenzulernen.
+                        </p>
+                        <div className="Subtitle subtitle-white">Funktionen:</div>
+                        <ul className="project-features">
+                            <li>3x3-Spielfeld für zwei Spieler (X/O)</li>
+                            <li>Rundenbasierte Eingabe über Konsole</li>
+                            <li>Automatische Gewinner- und Unentschieden-Erkennung</li>
                         </ul>
-                    </div>
-                    <div>
-                        <video className="tictactoe-video" width="640" height="360" controls>
+                        <div className="Subtitle subtitle-white">Technologien:</div>
+                        <p className="project-tech">
+                           C# (.NET Core Console Application)
+                        </p>
+                        <video className="tictactoe-video-large" controls>
                             <source src={TictactoeVideo} type="video/mp4" />
-                            Ihr Browser unterstützt das Video-Tag nicht.
+                            Dein Browser unterstützt das Video-Tag nicht.
                         </video>
-                        <div className="image-caption">Dies ist das Tic Tac Toe Spiel als Konsolenanwendung.</div>
+                        <div className="caption project-caption">Gameplay-Video</div>
                     </div>
-                    <div className="code-container">
+                    <div className="Buttons-container">
                         <button
                             className="Details-Button"
                             onClick={() => navigate('/projects/tictactoe/code')}
                         >
                             Code
                         </button>
+                        <a
+                            className="Details-Button"
+                            href="https://github.com/mathieualbrecht/tictactoe"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Github
+                        </a>
                     </div>
                 </div>
             </div>

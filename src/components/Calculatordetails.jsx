@@ -11,39 +11,56 @@ function Calculatordetails() {
             <h1 className="header">Rechner</h1>
             <div className="projectdetails-card text-bg-dark">
                 <div className="card-body">
-                    <p className="card-text">
-                        Ein einfacher Rechner geschrieben als Konsolenanwendung in C#. Der Rechner kann die einfachen Rechenoperationen Addition, Subtraktion, Divison und Multiplikation durchführen.
-                    </p>
-                    <div className="Subtitle text-white">
-                        Technologien/Tools:
-                    </div>
-                    <div className="card-text" style={{textAlign: "left", marginLeft: "80px"}}>
-                        <ul>
-                            <li>Sprache: C#</li>
+                    <div className="projekt project-details-card">
+                        <div className="project-header-row">
+                            <img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=c-sharp&logoColor=white" alt="C# Badge" height="20" className="project-badge" />
+                        </div>
+                        <div className="Subtitle subtitle-white">Beschreibung:</div>
+                        <p className="project-description">
+                            <strong>Schneller Konsolen-Taschenrechner für die Grundrechenarten.</strong><br />
+                            Ein schlanker Konsolenrechner für Addition, Subtraktion, Multiplikation, Division, Quadratwurzeln und Potenzen. Die Bedienung läuft komplett über die Tastatur und eignet sich ideal für schnelle Rechnungen oder als Lernprojekt in C#.
+                        </p>
+                        <div className="Subtitle subtitle-white">Funktionen:</div>
+                        <ul className="project-features">
+                            <li>Rechnet mit +, −, ×, ÷, √, ^</li>
+                            <li>Beliebig viele Rechnungen nacheinander möglich</li>
+                            <li>Minimalistischer, verständlicher Code</li>
                         </ul>
-                    </div>
-                    <div className="calculator-image">
-                        <img
-                            src={Rechner}
-                            className="CalculatorDetails-Image"
-                            alt="Login"
-                            onClick={() => setModalImg(Rechner)}
-                            style={{ cursor: "pointer" }}
-                        />
-                        <div className="image-caption">Dies ist der Rechner der die Grundoperationen durchgeführt hat.</div>
+                        <div className="Subtitle subtitle-white">Technologien:</div>
+                        <p className="project-tech">
+                            C# (.NET 7 Console Application)
+                        </p>
+
+                            <img
+                                src={Rechner}
+                                className="project-screenshot"
+                                alt="Screenshot Rechner"
+                                onClick={() => setModalImg(Rechner)}
+                                style={{ cursor: "pointer" }}
+                            />
+                            <div className="caption project-caption">Beispiel einer Rechenoperation (Konsole)</div>
+
                     </div>
                     {modalImg && (
                         <div className="lightbox" onClick={() => setModalImg(null)}>
                             <img src={modalImg} alt="Großansicht" className="lightbox-img" />
                         </div>
                     )}
-                    <div className="code-container">
+                    <div className="Buttons-container">
                         <button
                             className="Details-Button"
                             onClick={() => navigate('/projects/calculator/code')}
                         >
                             Code
                         </button>
+                        <a
+                            className="Details-Button"
+                            href="https://github.com/mathieualbrecht/rechner"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Github
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,18 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { tomorrow as baseTomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+const tomorrow = {
+    ...baseTomorrow,
+    'pre[class*="language-"]': {
+        ...baseTomorrow['pre[class*="language-"]'],
+        background: '#000',
+    },
+    'code[class*="language-"]': {
+        ...baseTomorrow['code[class*="language-"]'],
+        background: 'none',
+    },
+};
 
 const PasswordmanagercodeString = `
 import tkinter as tk
@@ -57,20 +69,21 @@ def show_add_password_page():
     password_entry = ttk.Entry(root, width=35, show="*")
     password_entry.grid(row=2, column=1, padx=10, pady=10)
 
-    ttk.Button(root, text="Save Password", command=save_password).grid(row=3, column=1, pady=10, sticky="e")
-`;
+    ttk.Button(root, text="Save Password", command=save_password).grid(row=3, column=1, pady=10, sticky="e")`;
 
 const PasswordmanagerCode = () => {
     return (
-        <>
+        <div>
             <h1 className="header">Password Manager Code</h1>
-            <div className="Subtitle">Hier haben sie einen Einblick in den Code der Passwortmanager Anwendung.</div>
-            <div className="code-container">
-                <SyntaxHighlighter language="javascript" style={tomorrow}>
-                    {PasswordmanagercodeString}
-                </SyntaxHighlighter>
+            <div className="projectdetails-card text-bg-dark">
+                <div className="card-body">
+                    <div className="Subtitle subtitle-white" style={{textAlign: "center"}}>Hier haben sie einen Einblick in den Code der Passwortmanager Anwendung.</div>
+                    <SyntaxHighlighter language="javascript" style={tomorrow} >
+                        {PasswordmanagercodeString}
+                    </SyntaxHighlighter>
+                </div>
             </div>
-        </>
+        </div>
     );
 };
 
