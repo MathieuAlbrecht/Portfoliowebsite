@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NameDisplay from './NameDisplay.jsx';
 import Marquee from 'react-fast-marquee';
@@ -36,6 +36,13 @@ const techIconsInfo = [
 function Home() {
     const navigate = useNavigate();
     const [selectedTech, setSelectedTech] = useState(null);
+
+    useEffect(() => {
+        document.body.classList.add('noscroll');
+        return () => {
+            document.body.classList.remove('noscroll');
+        };
+    }, []);
 
     return (
         <div>
